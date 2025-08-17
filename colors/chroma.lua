@@ -465,7 +465,7 @@ M.style = function()
   -- Tree-sitter highlight groups
   highlight(0, "@variable", { link = "chromaWhite" })
   highlight(0, "@variable.builtin", { link = "chromaWhite" })
-  highlight(0, "@variable.parameter", { fg = chroma_blue })
+  highlight(0, "@variable.parameter", { fg = blue })
   highlight(0, "@variable.member", { fg = blue })
 
   highlight(0, "@constant", { link = "chromaYellow" })
