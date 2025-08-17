@@ -240,7 +240,7 @@ M.style = function()
   highlight(0, "Type", { fg = chroma_orange })
 
   -- Numbers
-  highlight(0, "Constant", { link = "chromaYellow" })
+  highlight(0, "Constant", { fg = chroma_yellow, bold = true })
 
   -- Character constants
   highlight(0, "Character", { link = "chromaRed" })
@@ -293,12 +293,7 @@ M.style = function()
   highlight(0, "Tabline", { bg = line, fg = light_gray })
   highlight(0, "TablineSel", { bg = line, fg = chroma_fg_delimiter })
   highlight(0, "TablineSelSymbol", { bg = line, fg = chroma_green })
-
-  if g.chromaTransparent == true then
-    highlight(0, "TablineFill", { fg = line })
-  else
-    highlight(0, "TablineFill", { bg = line, fg = line })
-  end
+  highlight(0, "TablineFill", { fg = line })
 
   if g.chromaWinSeparator == 0 then
     highlight(0, "VertSplit", { bg = none, fg = none })
@@ -465,7 +460,8 @@ M.style = function()
   -- Tree-sitter highlight groups
   highlight(0, "@variable", { link = "chromaWhite" })
   highlight(0, "@variable.builtin", { link = "chromaWhite" })
-  highlight(0, "@variable.parameter", { fg = blue })
+  highlight(0, "@variable.parameter", { fg = chroma_grey })
+  highlight(0, "@variable.parameter.builtin", { fg = chroma_grey })
   highlight(0, "@variable.member", { fg = blue })
 
   highlight(0, "@constant", { link = "chromaYellow" })
@@ -486,7 +482,7 @@ M.style = function()
   highlight(0, "@character", { link = "chromaRed" })
   highlight(0, "@character.special", { link = "chromaOrange" })
 
-  highlight(0, "@boolean", { link = "chromaOrange" })
+  highlight(0, "@boolean", { fg = chroma_orange, bold = true })
   highlight(0, "@number", { link = "chromaYellow" })
   highlight(0, "@number.float", { link = "chromaYellow" })
 
