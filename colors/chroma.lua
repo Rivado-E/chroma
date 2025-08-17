@@ -459,17 +459,18 @@ M.style = function()
 
 	-- Tree-sitter highlight groups
 	highlight(0, "@variable", { link = "chromaWhite" })
-	highlight(0, "@variable.builtin", { link = "chromaWhite" })
-	highlight(0, "@variable.parameter", { fg = chroma_grey })
-	highlight(0, "@variable.parameter.builtin", { fg = chroma_grey })
+	highlight(0, "@variable.builtin", { fg = cyan, italic = true })
+	highlight(0, "@variable.parameter", { fg = chroma_grey, italic = true })
+	highlight(0, "@variable.parameter.builtin", { link = "@variable.parameter" })
 	highlight(0, "@variable.member", { fg = blue })
 
 	highlight(0, "@constant", { link = "chromaYellow" })
 	highlight(0, "@constant.builtin", { link = "chromaYellow" })
 	highlight(0, "@constant.macro", { link = "chromaBlue" })
 
-	highlight(0, "@module", { link = "chromaWhite" })
-	highlight(0, "@module.builtin", { link = "chromaWhite" })
+	-- Modules
+	highlight(0, "@module", { fg = chroma_grey })
+	highlight(0, "@module.builtin", { fg = cyan })
 
 	highlight(0, "@string", { link = "chromaGreen" })
 	highlight(0, "@string.documentation", { link = "chromaGreen" })
@@ -494,14 +495,15 @@ M.style = function()
 	highlight(0, "@attribute", { fg = chroma_white })
 	highlight(0, "@property", { fg = blue })
 
-	highlight(0, "@function", { link = "chromaRed" })
-	highlight(0, "@function.builtin", { link = "chromaOrange" })
-	highlight(0, "@function.call", { link = "chromaRed" })
-	highlight(0, "@function.macro", { link = "chromaRed" })
-	highlight(0, "@function.method", { link = "chromaRed" })
-	highlight(0, "@function.method.call", { link = "chromaRed" })
+	-- Functions
+	highlight(0, "@function", { link = "chromaRed" })                   -- user-defined
+	highlight(0, "@function.call", { fg = chroma_red })                 -- calls (same color for consistency)
+	highlight(0, "@function.builtin", { fg = chroma_orange })           -- builtins
+	highlight(0, "@function.macro", { fg = chroma_orange, bold = true }) -- macros stand out
+	highlight(0, "@function.method", { link = "chromaRed" })            -- method definitions
+	highlight(0, "@function.method.call", { fg = chroma_red })          -- method calls
 
-	highlight(0, "@constructor", { link = "chromaOrange" })
+	highlight(0, "@constructor", { fg = chroma_orange, bold = true })
 
 	highlight(0, "@keyword", { link = "chromaPurple" })
 	highlight(0, "@keyword.coroutine", { link = "chromaPurple" })
@@ -567,6 +569,58 @@ M.style = function()
 	highlight(0, "@tag.delimiter", { fg = gray })
 
 	highlight(0, "@label", { link = "chromaOrange" })
+	-------------------------------------------------------------------------
+	-- Semantic
+	-------------------------------------------------------------------------
+
+	-- Core types
+	highlight(0, "@lsp.type.namespace", { link = "@module" })
+	highlight(0, "@lsp.typemod.namespace.defaultLibrary", { link = "@module.builtin" })
+
+	highlight(0, "@lsp.type.type", { link = "@type" })
+	highlight(0, "@lsp.typemod.type.defaultLibrary", { link = "@type.builtin" })
+	highlight(0, "@lsp.type.class", { link = "@type" })
+	highlight(0, "@lsp.type.struct", { link = "@type" })
+	highlight(0, "@lsp.type.interface", { link = "@type" })
+	highlight(0, "@lsp.type.enum", { link = "@type" })
+	highlight(0, "@lsp.type.typeParameter", { link = "@type.definition" })
+
+	-- Variables / properties / members
+	highlight(0, "@lsp.type.variable", { link = "@variable" })
+	highlight(0, "@lsp.typemod.variable.defaultLibrary", { link = "@variable.builtin" })
+	highlight(0, "@lsp.typemod.variable.readonly", { link = "@constant" }) -- readonly gets constant style
+	highlight(0, "@lsp.type.parameter", { link = "@variable.parameter" })
+	highlight(0, "@lsp.type.property", { link = "@property" })
+	highlight(0, "@lsp.typemod.property.readonly", { link = "@property" })
+	highlight(0, "@lsp.type.enumMember", { link = "@constant" })
+
+	-- Functions / methods / macros / ctors
+	highlight(0, "@lsp.type.function", { link = "@function" })
+	highlight(0, "@lsp.typemod.function.defaultLibrary", { link = "@function.builtin" })
+	highlight(0, "@lsp.type.method", { link = "@function.method" })
+	highlight(0, "@lsp.typemod.method.defaultLibrary", { link = "@function.builtin" })
+	highlight(0, "@lsp.type.macro", { link = "@function.macro" })
+	highlight(0, "@lsp.type.constructor", { link = "@constructor" })
+
+	-- Literals
+	highlight(0, "@lsp.type.string", { link = "@string" })
+	highlight(0, "@lsp.type.regexp", { link = "@string.regexp" })
+	highlight(0, "@lsp.type.number", { link = "@number" })
+	highlight(0, "@lsp.type.boolean", { link = "@boolean" })
+	highlight(0, "@lsp.type.character", { link = "@character" })
+
+	-- Keywords / operators / punctuation
+	highlight(0, "@lsp.type.keyword", { link = "@keyword" })
+	highlight(0, "@lsp.type.operator", { link = "@operator" })
+
+	-- Comments / markup
+	highlight(0, "@lsp.type.comment", { link = "@comment" })
+
+	-- Decorators / attributes / annotations
+	highlight(0, "@lsp.type.decorator", { link = "@attribute" })
+
+	-- Modifiers (map only the useful ones; no italics)
+	highlight(0, "@lsp.mod.deprecated", { link = "DiagnosticDeprecated" }) -- strikethrough, if your theme sets it
 
 	-------------------------------------------------------------------------
 	-- Plugin support
