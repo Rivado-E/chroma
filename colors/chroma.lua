@@ -34,7 +34,7 @@ local menu_bg = "#202123"
 if g.chromaTransparent ~= false then
   menu_bg = none
 end
-local blue = "#166DB1"
+local blue = "#238BDE"
 local light_blue = "#9BC2D1"
 local green = "#6A9955"
 local light_green = "#B5CEA8"
