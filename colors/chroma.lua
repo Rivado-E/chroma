@@ -465,8 +465,8 @@ M.style = function()
   -- Tree-sitter highlight groups
   highlight(0, "@variable", { link = "chromaWhite" })
   highlight(0, "@variable.builtin", { link = "chromaWhite" })
-  highlight(0, "@variable.parameter", { fg = light_blue })
-  highlight(0, "@variable.member", { fg = light_blue })
+  highlight(0, "@variable.parameter", { fg = blue })
+  highlight(0, "@variable.member", { fg = blue })
 
   highlight(0, "@constant", { link = "chromaYellow" })
   highlight(0, "@constant.builtin", { link = "chromaYellow" })
@@ -496,7 +496,7 @@ M.style = function()
   highlight(0, "@type.qualifier", { link = "chromaPurple" })
 
   highlight(0, "@attribute", { fg = chroma_white })
-  highlight(0, "@property", { fg = light_blue })
+  highlight(0, "@property", { fg = blue })
 
   highlight(0, "@function", { link = "chromaRed" })
   highlight(0, "@function.builtin", { link = "chromaOrange" })
