@@ -184,104 +184,98 @@ M.style = function()
   -------------------------------------------------------------------------
   -- Standard styling
   -------------------------------------------------------------------------
-  highlight(0, "Normal", { fg = fg, bg = bg })
-  highlight(0, "SignColumn", { fg = 'NONE', bg = bg })
-  highlight(0, "MsgArea", { fg = fg, bg = bg })
-  highlight(0, "ModeMsg", { fg = fg, bg = alt_bg })
-  highlight(0, "MsgSeparator", { fg = fg, bg = bg })
-  highlight(0, "SpellBad", { fg = 'NONE', bg = 'NONE', sp = chroma_red, undercurl=true, })
-  highlight(0, "SpellCap", { fg = 'NONE', bg = 'NONE', sp = yellow, undercurl=true, })
-  highlight(0, "SpellLocal", { fg = 'NONE', bg = 'NONE', sp = green, underline=true, })
-  highlight(0, "SpellRare", { fg = 'NONE', bg = 'NONE', sp = chroma_purple, underline=true, })
-  highlight(0, "NormalNC", { fg = fg, bg = bg })
-  highlight(0, "Pmenu", { fg = light_gray, bg = menu_bg })
-  highlight(0, "PmenuSel", { fg = 'NONE', bg = ui2_blue })
-  highlight(0, "WildMenu", { fg = chroma_fg_delimiter, bg = ui2_blue })
-  highlight(0, "CursorLineNr", { fg = chroma_yellow2, bg = 'NONE' })
-  highlight(0, "Folded", { fg = gray, bg = alt_bg })
-  highlight(0, "FoldColumn", { fg = gray, bg = alt_bg })
-  highlight(0, "LineNr", { fg = gray, bg = 'NONE' })
-  highlight(0, "FloatBoder", { fg = gray, bg = alt_bg })
-  highlight(0, "Whitespace", { fg = dark_gray, bg = 'NONE' })
-  highlight(0, "VertSplit", { fg = gray, bg = bg })
-  highlight(0, "CursorLine", { fg = 'NONE', bg = 'NONE' })
-  highlight(0, "CursorColumn", { fg = 'NONE', bg = alt_bg })
-  highlight(0, "ColorColumn", { fg = 'NONE', bg = alt_bg })
-  highlight(0, "NormalFloat", { fg = 'NONE', bg = alt_bg })
-  highlight(0, "Visual", { fg = 'NONE', bg = ui6_blue })
-  highlight(0, "VisualNOS", { fg = 'NONE', bg = alt_bg })
-  highlight(0, "WarningMsg", { fg = error, bg = bg })
-  highlight(0, "DiffText", { fg = alt_bg, bg = sign_delete })
-  highlight(0, "DiffAdd", { fg = alt_bg, bg = sign_add })
-  highlight(0, "DiffChange", { fg = alt_bg, bg = sign_change })
-  highlight(0, "DiffDelete", { fg = alt_bg, bg = sign_delete })
-  highlight(0, "QuickFixLine", { fg = 'NONE', bg = ui2_blue })
-  highlight(0, "PmenuSbar", { fg = 'NONE', bg = alt_bg })
-  highlight(0, "PmenuThumb", { fg = 'NONE', bg = gray })
-  highlight(0, "MatchWord", { fg = 'NONE', bg = reference })
-  highlight(0, "MatchParen", { fg = hint, bg = reference })
-  highlight(0, "MatchWordCur", { fg = 'NONE', bg = reference })
-  highlight(0, "MatchParenCur", { fg = 'NONE', bg = reference })
-  highlight(0, "Cursor", { fg = cursor_fg, bg = cursor_bg })
-  highlight(0, "lCursor", { fg = cursor_fg, bg = cursor_bg })
-  highlight(0, "CursorIM", { fg = cursor_fg, bg = cursor_bg })
-  highlight(0, "TermCursor", { fg = cursor_fg, bg = cursor_bg })
-  highlight(0, "TermCursorNC", { fg = cursor_fg, bg = cursor_bg })
-  highlight(0, "Conceal", { fg = gray, bg = 'NONE' })
-  highlight(0, "Directory", { fg = folder_blue, bg = 'NONE' })
-  highlight(0, "SpecialKey", { fg = blue, bg = 'NONE', bold=true, })
-  highlight(0, "ErrorMsg", { fg = error, bg = bg, bold=true, })
-  highlight(0, "Search", { fg = 'NONE', bg = ui5_blue })
-  highlight(0, "IncSearch", { fg = 'NONE', bg = ui2_orange })
-  highlight(0, "Substitute", { fg = 'NONE', bg = ui2_orange })
-  highlight(0, "MoreMsg", { fg = orange, bg = 'NONE' })
-  highlight(0, "Question", { fg = orange, bg = 'NONE' })
-  highlight(0, "EndOfBuffer", { fg = bg, bg = 'NONE' })
-  highlight(0, "NonText", { fg = dark_gray, bg = 'NONE' })
-  highlight(0, "TabLine", { fg = light_gray, bg = line })
-  highlight(0, "TabLineSel", { fg = chroma_fg_delimiter, bg = line })
-  highlight(0, "TabLineFill", { fg = line, bg = line })
 
-  -- Code
-  highlight(0, "Comment", { fg = context, bg = 'NONE' })
-  highlight(0, "Variable", { fg = light_blue, bg = 'NONE' })
-  highlight(0, "String", { fg = chroma_green, bg = 'NONE' })
-  highlight(0, "Character", { fg = chroma_red, bg = 'NONE' })
-  highlight(0, "Number", { fg = chroma_yellow, bg = 'NONE' })
-  highlight(0, "Float", { fg = chroma_yellow, bg = 'NONE' })
-  highlight(0, "Boolean", { fg = chroma_orange, bg = 'NONE' })
-  highlight(0, "Constant", { fg = chroma_yellow, bg = 'NONE' })
-  highlight(0, "Type", { fg = chroma_orange, bg = 'NONE' })
-  highlight(0, "Function", { fg = chroma_red, bg = 'NONE' })
-  highlight(0, "Keyword", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Conditional", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Repeat", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Operator", { fg = chroma_grey, bg = 'NONE' })
-  highlight(0, "PreProc", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Include", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Exception", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "StorageClass", { fg = chroma_white, bg = 'NONE' })
-  highlight(0, "Structure", { fg = chroma_white, bg = 'NONE' })
-  highlight(0, "Typedef", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Define", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Macro", { fg = chroma_orange, bg = 'NONE' })
-  highlight(0, "Debug", { fg = chroma_red, bg = 'NONE' })
-  highlight(0, "Title", { fg = chroma_orange, bg = 'NONE', bold=true, })
-  highlight(0, "Label", { fg = chroma_orange, bg = 'NONE' })
-  highlight(0, "SpecialChar", { fg = chroma_orange, bg = 'NONE' })
-  highlight(0, "Delimiter", { fg = chroma_fg_delimiter, bg = 'NONE' })
-  highlight(0, "SpecialComment", { fg = chroma_fg_delimiter, bg = 'NONE' })
-  highlight(0, "Tag", { fg = chroma_orange, bg = 'NONE' })
-  highlight(0, "Bold", { fg = 'NONE', bg = 'NONE', bold=true, })
-  highlight(0, "Italic", { fg = 'NONE', bg = 'NONE', italic=true, })
-  highlight(0, "Underlined", { fg = 'NONE', bg = 'NONE', underline=true, })
-  highlight(0, "Ignore", { fg = magenta, bg = 'NONE', bold=true, })
-  highlight(0, "TODO", { fg = magenta, bg = 'NONE', bold=true, })
-  highlight(0, "Error", { fg = error, bg = 'NONE', bold=true, })
-  highlight(0, "Statement", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Identifier", { fg = fg, bg = 'NONE' })
-  highlight(0, "PreCondit", { fg = chroma_purple, bg = 'NONE' })
-  highlight(0, "Special", { fg = chroma_orange, bg = 'NONE' })
+  -- Specify the colors used by the inbuilt terminal
+  if g.chromaTerminalColors then
+    g.terminal_color_0 = gray
+    g.terminal_color_1 = chroma_red
+    g.terminal_color_2 = green
+    g.terminal_color_3 = chroma_yellow
+    g.terminal_color_4 = chroma_blue
+    g.terminal_color_5 = chroma_purple
+    g.terminal_color_6 = cyan
+    g.terminal_color_7 = chroma_white
+    g.terminal_color_8 = gray
+    g.terminal_color_9 = chroma_red
+    g.terminal_color_10 = chroma_green
+    g.terminal_color_11 = chroma_yellow2
+    g.terminal_color_12 = chroma_blue2
+    g.terminal_color_13 = chroma_purple
+    g.terminal_color_14 = cyan
+    g.terminal_color_15 = chroma_white
+  end
+
+  -- Background and text
+  highlight(0, "Normal", { bg = bg, fg = fg })
+
+  -- Color of mode text, -- INSERT --
+  highlight(0, "ModeMsg", { fg = context })
+
+  -- Comments
+  if g.chromaItalics then
+    highlight(0, "Comment", { fg = context, italic = true })
+  else
+    highlight(0, "Comment", { link = "chromaGrey" })
+  end
+
+  -- Functions
+  highlight(0, "Function", { link = "chromaRed" })
+
+  -- Strings
+  highlight(0, "String", { link = "chromaGreen" })
+
+  -- Booleans
+  highlight(0, "Boolean", { link = "chromaOrange" })
+
+  -- Identifiers
+  highlight(0, "Identifier", { link = "chromaWhite" })
+
+  -- Color of titles
+  highlight(0, "Title", { fg = chroma_orange, bold = true })
+
+  -- const, static
+  highlight(0, "StorageClass", { link = "chromaWhite" })
+
+  -- void, intptr_t
+  highlight(0, "Type", { fg = chroma_orange })
+
+  -- Numbers
+  highlight(0, "Constant", { link = "chromaYellow" })
+
+  -- Character constants
+  highlight(0, "Character", { link = "chromaRed" })
+
+  -- Exceptions
+  highlight(0, "Exception", { link = "chromaPurple" })
+
+  -- ifdef/endif
+  highlight(0, "PreProc", { link = "chromaPurple" })
+
+  -- case in switch statement
+  highlight(0, "Label", { link = "chromaOrange" })
+
+  -- end-of-line '$', end-of-file '~'
+  highlight(0, "NonText", { fg = dark_gray })
+
+  -- sizeof
+  highlight(0, "Operator", { link = "chromaGrey" })
+
+  -- for, while
+  highlight(0, "Repeat", { link = "chromaPurple" })
+
+  -- Search
+  highlight(0, "Search", { bg = ui5_blue, fg = fg })
+  highlight(0, "CurSearch", { bg = ui2_orange, fg = fg })
+  highlight(0, "IncSearch", { bg = ui2_orange, fg = fg })
+
+  -- '\n' sequences
+  highlight(0, "Special", { link = "chromaOrange" })
+
+  -- if, else
+  highlight(0, "Statement", { fg = chroma_purple })
+
+  -- struct, union, enum, typedef
+  highlight(0, "Structure", { link = "chromaWhite" })
 
   -- Status, split and tab lines
   if g.chromaTransparent == true then
