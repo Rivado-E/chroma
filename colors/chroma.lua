@@ -17,14 +17,14 @@ if g.chromaTransparent ~= false then
 end
 local chroma_grey = "#7E7E80"
 local chroma_green = "#AECDAF"
-local chroma_white = "#CBCBCB"
-local chroma_orange = "#CDA07C"
+local chroma_white = "#E0E0E0"
+local chroma_orange = "#E4B897"
 local chroma_blue = "#697BFF"
 local chroma_blue2 = "#77B0DA"
 local chroma_yellow = "#CFD481"
 local chroma_yellow2 = "#FEE592"
 local chroma_red = "#C27574"
-local chroma_purple = "#A38FA8"
+local chroma_purple = "#CCB9D1"
 local line = "#3e3e3e"
 local dark_gray = "#404040"
 local gray = "#808080"
@@ -34,8 +34,8 @@ local menu_bg = "#202123"
 if g.chromaTransparent ~= false then
   menu_bg = none
 end
-local blue = "#569CD6"
-local light_blue = "#77A4B3"
+local blue = "#1FA0FF"
+local light_blue = "#9BC2D1"
 local green = "#6A9955"
 local light_green = "#B5CEA8"
 local cyan = "#4EC9B0"
@@ -465,7 +465,7 @@ M.style = function()
   -- Tree-sitter highlight groups
   highlight(0, "@variable", { link = "chromaWhite" })
   highlight(0, "@variable.builtin", { link = "chromaWhite" })
-  highlight(0, "@variable.parameter", { fg = blue })
+  highlight(0, "@variable.parameter", { fg = chroma_blue })
   highlight(0, "@variable.member", { fg = blue })
 
   highlight(0, "@constant", { link = "chromaYellow" })
