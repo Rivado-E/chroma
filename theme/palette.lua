@@ -1,0 +1,134 @@
+local M = {}
+local none = "NONE"
+
+-- Core theme colors from chroma palette
+local fg = "#D0D0D0"
+local chroma_fg_delimiter = "#ADBDB0"
+local bg = none -- Default to transparent background
+if g.chromaTransparent == false then
+	bg = "#252525"
+end
+local alt_fg = "#a4a4a4"
+local alt_bg = "#252525"
+if g.chromaTransparent ~= false then
+	alt_bg = none
+end
+local chroma_grey = "#7E7E80"
+local chroma_green = "#AECDAF"
+local chroma_white = "#E0E0E0"
+local chroma_orange = "#BD8661"
+local chroma_blue = "#697BFF"
+local chroma_blue2 = "#77B0DA"
+local chroma_yellow = "#CFD481"
+local chroma_yellow2 = "#FEE592"
+local chroma_red = "#CC5E5C"
+local chroma_purple = "#9977A7"
+local line = "#3e3e3e"
+local dark_gray = "#404040"
+local gray = "#808080"
+local context = "#606060"
+local light_gray = "#cccccc"
+local menu_bg = "#202123"
+if g.chromaTransparent ~= false then
+	menu_bg = none
+end
+local blue = "#238BDE"
+local light_blue = "#9BC2D1"
+local green = "#6A9955"
+local light_green = "#B5CEA8"
+local cyan = "#4EC9B0"
+local orange = "#CE9178"
+local yellow = "#DCDCAA"
+local yellow_orange = "#D7BA7D"
+local magenta = "#D16D9E"
+local cursor_fg = "#515052"
+local cursor_bg = "#AEAFAD"
+local sign_add = "#587c0c"
+local sign_change = "#0c7d9d"
+local sign_delete = "#94151b"
+local sign_add_alt = "#73C991"
+local sign_change_alt = "#CCA700"
+local error = "#C27574"
+local warn = "#C16700"
+local info = "#C8A04F"
+local hint = "#378EBB"
+local error_bg = "#31262d"
+local warn_bg = "#32302f"
+local info_bg = "#1e3135"
+local hint_bg = "#22323f"
+local reference = "#363636"
+local success_green = "#14C50B"
+local folder_blue = "#42A5F5"
+local ui_blue = "#213249"
+local ui2_blue = "#042A43"
+local ui3_blue = "#0487E0"
+local ui4_blue = "#5B94C7"
+local ui5_blue = "#083C5A"
+local ui6_blue = "#2D4F67"
+local ui_orange = "#CE9178"
+local ui2_orange = "#D7BA7D"
+local ui_purple = "#A38FA8"
+
+M.palette = function()
+	return {
+		fg = fg,
+		chroma_fg_delimiter = chroma_fg_delimiter,
+		bg = bg,
+		alt_fg = alt_fg,
+		alt_bg = alt_bg,
+		chroma_grey = chroma_grey,
+		chroma_green = chroma_green,
+		chroma_white = chroma_white,
+		chroma_orange = chroma_orange,
+		chroma_blue = chroma_blue,
+		chroma_blue2 = chroma_blue2,
+		chroma_yellow = chroma_yellow,
+		chroma_yellow2 = chroma_yellow2,
+		chroma_red = chroma_red,
+		chroma_purple = chroma_purple,
+		line = line,
+		dark_gray = dark_gray,
+		gray = gray,
+		context = context,
+		light_gray = light_gray,
+		menu_bg = menu_bg,
+		blue = blue,
+		light_blue = light_blue,
+		green = green,
+		light_green = light_green,
+		cyan = cyan,
+		orange = orange,
+		yellow = yellow,
+		yellow_orange = yellow_orange,
+		magenta = magenta,
+		cursor_fg = cursor_fg,
+		cursor_bg = cursor_bg,
+		sign_add = sign_add,
+		sign_change = sign_change,
+		sign_delete = sign_delete,
+		sign_add_alt = sign_add_alt,
+		sign_change_alt = sign_change_alt,
+		error = error,
+		warn = warn,
+		info = info,
+		hint = hint,
+		error_bg = error_bg,
+		warn_bg = warn_bg,
+		info_bg = info_bg,
+		hint_bg = hint_bg,
+		reference = reference,
+		success_green = success_green,
+		folder_blue = folder_blue,
+		ui_blue = ui_blue,
+		ui2_blue = ui2_blue,
+		ui3_blue = ui3_blue,
+		ui4_blue = ui4_blue,
+		ui5_blue = ui5_blue,
+		ui6_blue = ui6_blue,
+		ui_orange = ui_orange,
+		ui2_orange = ui2_orange,
+		ui_purple = ui_purple,
+	}
+end
+
+return M
